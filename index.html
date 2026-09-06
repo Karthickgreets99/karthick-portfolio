@@ -1,225 +1,291 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Karthick Gunasekaran</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Karthick — AI Solutions Architect</title>
+<meta name="description" content="Karthick — AI Solutions Architect. RAG pipelines, agent orchestration, and cloud deployment.">
+<style>
+  :root {
+    --bg: #FBFBF8;
+    --ink: #1A1A18;
+    --ink-soft: #55554F;
+    --ink-faint: #8C8B82;
+    --accent: #2E4A6B;
+    --accent-soft: #E8EDF2;
+    --line: #E4E2D8;
+    --mono: 'SF Mono', 'JetBrains Mono', 'Courier New', monospace;
+    --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  }
 
-  <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-      margin: 0;
-      background: #f8fafc;
-      color: #0f172a;
-      line-height: 1.6;
-    }
+  * { box-sizing: border-box; }
 
-    header {
-      background: #0f172a;
-      color: white;
-      padding: 60px 20px;
-      text-align: center;
-    }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
 
-    h1 {
-      margin: 0;
-      font-size: 34px;
-    }
+  a { color: inherit; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
-    .subtitle {
-      color: #cbd5f5;
-      margin-top: 10px;
-      font-size: 16px;
-    }
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
 
-    section {
-      max-width: 950px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
+  /* Header */
+  header {
+    padding: 64px 0 32px;
+    border-bottom: 1px solid var(--line);
+  }
+  header h1 {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0 0 6px;
+    letter-spacing: -0.01em;
+  }
+  header p {
+    margin: 0 0 20px;
+    color: var(--ink-soft);
+    font-size: 15px;
+  }
+  nav { display: flex; gap: 20px; }
+  nav a {
+    text-decoration: none;
+    font-size: 14px;
+    color: var(--ink-soft);
+    padding-bottom: 4px;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.15s, color 0.15s;
+  }
+  nav a:hover { color: var(--ink); border-color: var(--accent); }
 
-    .card {
-      background: white;
-      padding: 28px;
-      border-radius: 12px;
-      margin-bottom: 25px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.06);
-    }
+  /* Sections */
+  section { padding: 56px 0; border-bottom: 1px solid var(--line); }
+  section:last-of-type { border-bottom: none; }
+  section h2 {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-faint);
+    font-weight: 600;
+    margin: 0 0 32px;
+  }
 
-    h2 {
-      margin-top: 0;
-    }
+  /* Work items */
+  .item { padding: 24px 0; border-top: 1px solid var(--line); }
+  .item:first-of-type { border-top: none; padding-top: 0; }
+  .item-title {
+    font-size: 17px;
+    font-weight: 600;
+    margin: 0 0 4px;
+  }
+  .item-org {
+    font-weight: 400;
+    color: var(--ink-faint);
+  }
+  .item-desc {
+    color: var(--ink-soft);
+    font-size: 15px;
+    margin: 8px 0 12px;
+    max-width: 560px;
+  }
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 12px;
+  }
+  .tag {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--accent);
+    background: var(--accent-soft);
+    padding: 3px 8px;
+    border-radius: 4px;
+  }
+  .item-links { display: flex; gap: 16px; }
+  .item-links a {
+    font-size: 14px;
+    text-decoration: none;
+    color: var(--ink);
+    border-bottom: 1px solid var(--ink-faint);
+    transition: border-color 0.15s;
+  }
+  .item-links a:hover { border-color: var(--ink); }
 
-    .highlight {
-      color: #2563eb;
-      font-weight: bold;
-    }
+  /* Empty-state / coming soon row */
+  .item-pending {
+    padding: 24px 0;
+    border-top: 1px solid var(--line);
+    color: var(--ink-faint);
+    font-size: 14px;
+    font-style: italic;
+  }
 
-    .metrics {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      margin-top: 15px;
-    }
+  /* About */
+  .about-text { max-width: 560px; color: var(--ink-soft); font-size: 15px; margin-bottom: 24px; }
+  .contact-links { display: flex; flex-direction: column; gap: 8px; }
+  .contact-links a {
+    font-size: 14px;
+    text-decoration: none;
+    color: var(--ink);
+    border-bottom: 1px solid transparent;
+    width: fit-content;
+  }
+  .contact-links a:hover { border-color: var(--ink); }
 
-    .metric {
-      background: #eef2ff;
-      padding: 10px 14px;
-      border-radius: 8px;
-      font-weight: bold;
-    }
+  footer {
+    padding: 32px 0 64px;
+    color: var(--ink-faint);
+    font-size: 13px;
+  }
 
-    .button {
-      display: inline-block;
-      padding: 10px 16px;
-      background: #2563eb;
-      color: white;
-      border-radius: 6px;
-      text-decoration: none;
-      margin-top: 12px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px;
-      color: #64748b;
-    }
-  </style>
+  @media (max-width: 600px) {
+    header { padding: 48px 0 28px; }
+    section { padding: 40px 0; }
+  }
+</style>
 </head>
-
 <body>
 
-<header>
-  <h1>Karthick Gunasekaran</h1>
-  <p class="subtitle">
-    Senior Engineering Manager | AI & Distributed Systems | FinTech | App Marketplace | E-commerce
-  </p>
-</header>
+<div class="wrap">
 
-<section>
+  <header>
+    <h1>Karthick</h1>
+    <p>Senior Engineering Leader &amp; AI Solutions Architect — RAG, agent orchestration, cloud deployment</p>
+    <nav>
+      <a href="#work">Work</a>
+      <a href="#publications">Publications</a>
+      <a href="#about">About</a>
+    </nav>
+  </header>
 
-  <div class="card">
-    <h2>🚀 About</h2>
-    <p>
-      Engineering leader with <span class="highlight">18+ years of experience</span> and 
-      <span class="highlight">9+ years in people leadership</span>, specializing in 
-      FinTech platforms, App Marketplaces, Checkout & Payments, and AI-driven systems.
-    </p>
-    <p>
-      Proven ability to scale distributed systems, drive monetization, improve reliability, 
-      and lead high-performing global engineering teams. Trusted partner to Product and Business 
-      in turning complex technology into customer-centric, revenue-generating outcomes.
-    </p>
-  </div>
+  <section id="work">
+    <h2>Work</h2>
 
-  <div class="card">
-    <h2>📊 Key Impact</h2>
-    <div class="metrics">
-      <div class="metric">22% Platform Growth</div>
-      <div class="metric">18% Revenue Growth</div>
-      <div class="metric">35% Attach Rate Increase</div>
-      <div class="metric">22% Reduction in Disconnects</div>
-      <div class="metric">99.995% Availability</div>
-      <div class="metric">18% OPEX Reduction</div>
-      <div class="metric">95% Team Velocity</div>
-      <div class="metric">20% Increase DORA metrics </div>
-      <div class="metric">5-8% Reduced MTTR, MTTD </div>
+    <!-- ============================================
+         PROJECT BLOCK — copy this whole <div class="item">
+         to add a new project. Edit title, org, tags,
+         description, and the two links.
+    ============================================= -->
+    <div class="item">
+      <p class="item-title">Enterprise AI Assistant <span class="item-org">— Personal Project</span></p>
+      <div class="tags">
+        <span class="tag">rag</span>
+        <span class="tag">claude-api</span>
+        <span class="tag">agent-orchestration</span>
+        <span class="tag">aws-ecs</span>
+        <span class="tag">docker</span>
+      </div>
+      <p class="item-desc">A multi-tool AI agent with RAG retrieval over a knowledge base, Claude tool-calling, and a bounded reasoning loop. Structured logging and automated tests included. Deployed on AWS.</p>
+      <div class="item-links">
+        <a href="#" target="_blank">GitHub</a>
+        <a href="#" target="_blank">Live demo</a>
+      </div>
     </div>
-  </div>
 
-  <div class="card">
-    <h2>📄 Research & Thought Leadership</h2>
-    <ul>
-      <li>AI-Driven Identity Verification: Continuous Trust Architecture for Global Payments</li>
-      <li>AI-Driven Autonomous Infrastructure Optimization for Distributed Systems</li>
-      <li>AI-Driven Merchant Trust Infrastructure for Marketplaces</li>
-    </ul>
-  </div>
+    <div class="item">
+      <p class="item-title">Partner Dev Support Assistant <span class="item-org">— Personal Project</span></p>
+      <div class="tags">
+        <span class="tag">langchain</span>
+        <span class="tag">rag</span>
+        <span class="tag">multi-llm</span>
+        <span class="tag">pinecone</span>
+        <span class="tag">aws-ecs</span>
+      </div>
+      <p class="item-desc">A single-turn RAG assistant answering marketplace policy questions from developer docs, with Claude, GPT, and Gemini interchangeable via one config change. Deployed on AWS with JWT-based auth.</p>
+      <div class="item-links">
+        <a href="#" target="_blank">GitHub</a>
+        <a href="#" target="_blank">Live demo</a>
+      </div>
+    </div>
+    <!-- ============================================
+         END PROJECT BLOCK
+    ============================================= -->
 
-  <div class="card">
-    <h2>🏢 Experience</h2>
+    <p class="item-pending">3 more projects in progress — check back soon.</p>
+  </section>
 
-    <p><b>Intuit</b> — Senior Engineering Manager (2024–Present)</p>
-    <ul>
-      <li>Scaled App Marketplace platform supporting 50+ integrations</li>
-      <li>Drove 22% platform growth and 18% revenue increase</li>
-      <li>Improved attach rate by 35% and reduced disconnect rate by 22%</li>
-      <li>Delivered AI-driven initiatives improving CSAT by 20%</li>
-      <li>Maintained 99.995% availability with zero downtime</li>
-      <li>Reduced OPEX by 18% and improved DORA metrics</li>
-    </ul>
+  <section id="publications">
+    <h2>Publications</h2>
 
-    <p><b>PayPal</b> — Senior Engineering Manager (2018–2024)</p>
-    <ul>
-      <li>Led Checkout SDK platform improving conversion rates</li>
-      <li>Enabled Apple Pay integration increasing revenue by 6%</li>
-      <li>Reduced production incidents by 23%</li>
-      <li>Improved release cycles by 50%</li>
-      <li>Reduced financial risk loss by 95%</li>
-    </ul>
+    <!-- ============================================
+         PUBLICATION BLOCK — copy to add another paper
+         or presentation. Fill in [Year], PDF/DOI links
+         once finalized.
+    ============================================= -->
+    <div class="item">
+      <p class="item-title">AI-Driven Identity Verification: A Continuous Trust Architecture for Global Payment Platforms <span class="item-org">— IEEE, 2025</span></p>
+      <p class="item-desc">Models identity as a continuous, probabilistic signal instead of a one-time onboarding check — reducing false positives while catching synthetic identity fraud and behavioral drift in real time.</p>
+      <div class="item-links">
+        <a href="#" target="_blank">Paper (PDF)</a>
+        <a href="#" target="_blank">DOI</a>
+      </div>
+    </div>
 
-    <p><b>Cognizant (eBay/PayPal)</b> — Engineering Manager (2014–2018)</p>
-    <ul>
-      <li>Led global teams of 25+ engineers</li>
-      <li>Improved team velocity by 25% and capacity by 50%</li>
-      <li>Led platform re-architecture increasing adoption by 25%</li>
-    </ul>
-     <p><b>Creamos Solutions</b> —Senior Lead Solution Architect (2012–2014)</p>
-    <ul>
-      <li>Re-architected platforms, improving API latency from 800ms to 250ms.</li>
-      <li>Migrated legacy systems to MEAN stack, improving processing efficiency by 5%.</li>
-      <li>Re-architecture front end application improved latency by 5%</li>
-    </ul>
-     <p><b>Infosys Technologies</b> — Technology Analyst / Senior Engineer(2006–2012)</p>
-    <ul>
-      <li>Implemented CI testing, reducing deployment cycles by 35%.</li>
-      <li>Improved feature delivery speed by 25% through Agile adoption.</li>
-    
-    </ul>
-   <p><b>Sify Technologies</b> — Software Engineer(2004–2006)</p>
-    <ul>
-      <li>Engineered and optimized database architecture ensuring data integrity and query performance.</li>
-      <li>Built transactional job pipelines and monitoring tools to automate workflows and improve observability.</li>
-      <li>Deployed a full-stack e-commerce platform serving 5,000+ monthly customers, driving 5% sales growth.</li>
-    
-    </ul>
-    
+    <div class="item">
+      <p class="item-title">AI-Driven Merchant Trust Infrastructure for Rapid Onboarding in Global Digital Marketplaces <span class="item-org">— IEEE, 2026</span></p>
+      <p class="item-desc">Replaces static merchant onboarding checks with continuous, graph-based trust scoring — improving fraud detection and approval rates for legitimate merchants simultaneously.</p>
+      <div class="item-links">
+        <a href="#" target="_blank">Paper (PDF)</a>
+        <a href="#" target="_blank">DOI</a>
+      </div>
+    </div>
 
-  </div>
+    <div class="item">
+      <p class="item-title">AI-Driven Autonomous Infrastructure Optimization for Large-Scale Distributed Systems <span class="item-org">— IEEE, 2026</span></p>
+      <p class="item-desc">GA-AOCP: a graph-aware reinforcement learning control plane that unifies autoscaling, provisioning, and routing — cutting cost 19% and dropping SLO violations from 2.1% to 0.4%.</p>
+      <div class="item-links">
+        <a href="#" target="_blank">Paper (PDF)</a>
+        <a href="#" target="_blank">DOI</a>
+      </div>
+    </div>
 
-  <div class="card">
-    <h2>🧠 Core Skills</h2>
-    <ul>
-      <li>Agentic AI workflows — LLM agents, tool calling, RAG, orchestration frameworks</li>
-      <li>Distributed Systems & Microservices</li>
-      <li>FinTech Platforms & Payment Systems</li>
-      <li>API Platforms, SDKs, Cloud (AWS/GCP)</li>
-      <li>Reliability Engineering, DORA Metrics, SRE</li>
-      <li>Monetization & Marketplace Platforms</li>
-      <li>Automation pipeline design across enterprise SaaS platforms</li>
-      <li>Monetization & Marketplace Platforms</li>
-      <li>Monitoring tools — Prometheus, Grafana, Datadog, PagerDuty</li>
-    </ul>
-  </div>
+    <p class="item-pending">2 more papers in progress — check back soon.</p>
+    <!-- ============================================
+         END PUBLICATION BLOCK
+    ============================================= -->
 
-  <div class="card">
-    <h2>🎓 Education</h2>
-    <p>B.E. Computer Science — University of Madras</p>
-    <p>Leadership Principles — Harvard Business School</p>
-    <p>Artificial Intelligence: Implications for Business Strategy  — MIT</p>
-  </div>
+    <div class="item">
+      <p class="item-title">[Presentation title] <span class="item-org">— [Conference / event name]</span></p>
+      <p class="item-desc">[One-sentence summary of what the talk covered.]</p>
+      <div class="item-links">
+        <a href="#" target="_blank">Slides</a>
+      </div>
+    </div>
+  </section>
 
-  <div class="card">
-    <h2>📫 Contact</h2>
-    <p>Email: karthick.gunasekaran82@gmail.com</p>
-    <p>contact: +1 408 797 7568</p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/karthickgchn/">Your Profile</a></p>
-  </div>
+  <section id="about">
+    <h2>About</h2>
+    <p class="about-text">
+      Senior engineering leader with 16 years in the industry — still hands-on, still learning.
+      At Intuit, I lead the 3P App Marketplace platform team, where I've built guardrails and
+      prompt-injection defenses for a production agent, taken an AI review system from
+      proof-of-concept to measured production impact, and built PII governance and compliance
+      systems for production AI. Previously at PayPal, I led a multi-team Checkout SDK adopted
+      as a shared platform component. Tech-enthusiastic, data-driven, and customer-obsessed,
+      with a track record of growing engineering teams and building collaborative cultures.
+      Currently focused on AI-driven trust systems, agentic architectures, and enterprise-scale
+      infrastructure — from RAG pipelines to autonomous infrastructure optimization.
+    </p>
+    <div class="contact-links">
+      <a href="mailto:karthick.gunasekaran82@gmail.com">Email</a>
+      <a href="https://github.com/Karthickgreets99/" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/karthickgchn/" target="_blank">LinkedIn</a>
+    </div>
+  </section>
 
-</section>
+  <footer>
+    Karthick, 2026
+  </footer>
 
-<footer>
-  © 2026 Karthick Gunasekaran
-</footer>
+</div>
 
 </body>
 </html>
