@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Karthick — Senior Engineering Leader &amp; AI Solutions Architect</title>
-<meta name="description" content="Karthick — Senior Engineering Leader &amp; AI Solutions Architect. RAG pipelines, agent orchestration, and cloud deployment.">
+<meta name="description" content="Karthick — Senior Engineering Leader &amp; AI Solutions Architect. Agentic and generative AI, RAG, multi-agent orchestration, AI governance, and evaluation.">
 <!-- Link previews (LinkedIn, Slack, etc.) -->
 <meta property="og:url" content="https://karthickgreets99.github.io/karthick-portfolio/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Karthick — Senior Engineering Leader &amp; AI Solutions Architect">
-<meta property="og:description" content="RAG pipelines, agent orchestration, and cloud deployment. Projects, IEEE publications, and background.">
+<meta property="og:description" content="Agentic and generative AI, RAG, multi-agent orchestration, AI governance, and evaluation. Projects, IEEE publications, and background.">
 <meta property="og:image" content="https://karthickgreets99.github.io/karthick-portfolio/profile.jpg">
 <meta name="twitter:card" content="summary">
 <style>
@@ -101,6 +101,24 @@
   /* Work items */
   .item { padding: 24px 0; border-top: 1px solid var(--line); }
   .item:first-of-type { border-top: none; padding-top: 0; }
+  .item.featured {
+    background: var(--accent-soft);
+    border: none;
+    border-left: 3px solid var(--accent);
+    border-radius: 6px;
+    padding: 20px 22px;
+    margin-bottom: 8px;
+  }
+  .item.featured + .item { border-top: none; }
+  .featured .tag { background: var(--bg); }
+  .featured-label {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--accent);
+    margin: 0 0 8px;
+  }
   .item-title {
     font-size: 17px;
     font-weight: 600;
@@ -187,16 +205,36 @@
     <div class="header-row">
       <div>
         <h1>Karthick</h1>
-        <p>Senior Engineering Leader &amp; AI Solutions Architect — RAG, agent orchestration, cloud deployment</p>
+        <p>Senior Engineering Leader &amp; AI Solutions Architect — agentic and generative AI, RAG, multi-agent orchestration with A2A, cloud deployment, and AI governance, evaluation, scoring, and anomaly detection</p>
         <nav>
+          <a href="#about">About</a>
           <a href="#work">Work</a>
           <a href="#publications">Publications</a>
-          <a href="#about">About</a>
         </nav>
       </div>
       <img class="profile-pic" src="profile.jpg" alt="Portrait of Karthick" width="128" height="128">
     </div>
   </header>
+
+  <section id="about">
+    <h2>About</h2>
+    <p class="about-text">
+      Senior engineering leader with 20 years in the industry — still hands-on, still learning.
+      At Intuit, I lead the 3P App Marketplace platform team, where I've built guardrails and
+      prompt-injection defenses for a production agent, taken an AI review system from
+      proof-of-concept to measured production impact, and built PII governance and compliance
+      systems for production AI. Previously at PayPal, I led a multi-team Checkout SDK adopted
+      as a shared platform component. Tech-enthusiastic, data-driven, and customer-obsessed,
+      with a track record of growing engineering teams and building collaborative cultures.
+      Currently focused on AI-driven trust systems, agentic architectures, and enterprise-scale
+      infrastructure — from RAG pipelines to autonomous infrastructure optimization.
+    </p>
+    <div class="contact-links">
+      <a href="mailto:karthick.gunasekaran82@gmail.com">Email</a>
+      <a href="https://github.com/Karthickgreets99" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/karthickgchn/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </section>
 
   <section id="work">
     <h2>Work</h2>
@@ -206,6 +244,23 @@
          to add a new project. Edit title, org, tags,
          description, and the two links.
     ============================================= -->
+    <div class="item featured">
+      <p class="featured-label">Featured · AI for developer productivity</p>
+      <p class="item-title">Partner Dev Support Assistant <span class="item-org">— Personal Project</span></p>
+      <div class="tags">
+        <span class="tag">developer-productivity</span>
+        <span class="tag">langchain</span>
+        <span class="tag">rag</span>
+        <span class="tag">multi-llm</span>
+        <span class="tag">pinecone</span>
+        <span class="tag">aws-ecs</span>
+      </div>
+      <p class="item-desc">Gives partner developers instant, sourced answers on marketplace policies, API docs, and compliance requirements — instead of digging through Jira, Confluence, and enterprise docs. A RAG pipeline over a knowledge base synced nightly into Pinecone, with Claude, GPT, and Gemini interchangeable via one config change. Deployed on AWS with JWT-based auth.</p>
+      <div class="item-links">
+        <a href="https://github.com/Karthickgreets99/3p-partner-dev-support-chat" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+
     <div class="item">
       <p class="item-title">Discovery Agent <span class="item-org">— Intuit, QuickBooks Online</span></p>
       <div class="tags">
@@ -255,21 +310,6 @@
       </div>
     </div>
 
-    <div class="item">
-      <p class="item-title">Partner Dev Support Assistant <span class="item-org">— Personal Project</span></p>
-      <div class="tags">
-        <span class="tag">langchain</span>
-        <span class="tag">rag</span>
-        <span class="tag">multi-llm</span>
-        <span class="tag">pinecone</span>
-        <span class="tag">aws-ecs</span>
-      </div>
-      <p class="item-desc">A single-turn RAG assistant answering marketplace policy questions from developer docs, with Claude, GPT, and Gemini interchangeable via one config change. Deployed on AWS with JWT-based auth.</p>
-      <div class="item-links">
-        <!-- Swap for <a href="..." target="_blank" rel="noopener">GitHub</a> once public -->
-        <span class="link-soon">Code &amp; demo coming soon</span>
-      </div>
-    </div>
     <!-- ============================================
          END PROJECT BLOCK
     ============================================= -->
@@ -344,25 +384,6 @@
     -->
   </section>
 
-  <section id="about">
-    <h2>About</h2>
-    <p class="about-text">
-      Senior engineering leader with 20 years in the industry — still hands-on, still learning.
-      At Intuit, I lead the 3P App Marketplace platform team, where I've built guardrails and
-      prompt-injection defenses for a production agent, taken an AI review system from
-      proof-of-concept to measured production impact, and built PII governance and compliance
-      systems for production AI. Previously at PayPal, I led a multi-team Checkout SDK adopted
-      as a shared platform component. Tech-enthusiastic, data-driven, and customer-obsessed,
-      with a track record of growing engineering teams and building collaborative cultures.
-      Currently focused on AI-driven trust systems, agentic architectures, and enterprise-scale
-      infrastructure — from RAG pipelines to autonomous infrastructure optimization.
-    </p>
-    <div class="contact-links">
-      <a href="mailto:karthick.gunasekaran82@gmail.com">Email</a>
-      <a href="https://github.com/Karthickgreets99" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://www.linkedin.com/in/karthickgchn/" target="_blank" rel="noopener">LinkedIn</a>
-    </div>
-  </section>
 
   <footer>
     Karthick, 2026
