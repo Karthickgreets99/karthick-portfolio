@@ -3,14 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Karthick — AI Solutions Architect</title>
-<meta name="description" content="Karthick — AI Solutions Architect. RAG pipelines, agent orchestration, and cloud deployment.">
+<title>Karthick — Senior Engineering Leader &amp; AI Solutions Architect</title>
+<meta name="description" content="Karthick — Senior Engineering Leader &amp; AI Solutions Architect. RAG pipelines, agent orchestration, and cloud deployment.">
+<!-- Link previews (LinkedIn, Slack, etc.) -->
+<meta property="og:url" content="https://karthickgreets99.github.io/karthick-portfolio/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Karthick — Senior Engineering Leader &amp; AI Solutions Architect">
+<meta property="og:description" content="RAG pipelines, agent orchestration, and cloud deployment. Projects, IEEE publications, and background.">
+<meta property="og:image" content="https://karthickgreets99.github.io/karthick-portfolio/profile.jpg">
+<meta name="twitter:card" content="summary">
 <style>
   :root {
     --bg: #FBFBF8;
     --ink: #1A1A18;
     --ink-soft: #55554F;
-    --ink-faint: #8C8B82;
+    --ink-faint: #6B6A63;
     --accent: #2E4A6B;
     --accent-soft: #E8EDF2;
     --line: #E4E2D8;
@@ -42,6 +49,20 @@
   header {
     padding: 64px 0 32px;
     border-bottom: 1px solid var(--line);
+  }
+  .header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+  }
+  .profile-pic {
+    flex-shrink: 0;
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid var(--line);
   }
   header h1 {
     font-size: 22px;
@@ -118,6 +139,10 @@
     transition: border-color 0.15s;
   }
   .item-links a:hover { border-color: var(--ink); }
+  .link-soon {
+    font-size: 14px;
+    color: var(--ink-faint);
+  }
 
   /* Empty-state / coming soon row */
   .item-pending {
@@ -149,6 +174,8 @@
   @media (max-width: 600px) {
     header { padding: 48px 0 28px; }
     section { padding: 40px 0; }
+    .header-row { flex-direction: column-reverse; align-items: flex-start; gap: 20px; }
+    .profile-pic { width: 96px; height: 96px; }
   }
 </style>
 </head>
@@ -157,13 +184,18 @@
 <div class="wrap">
 
   <header>
-    <h1>Karthick</h1>
-    <p>Senior Engineering Leader &amp; AI Solutions Architect — RAG, agent orchestration, cloud deployment</p>
-    <nav>
-      <a href="#work">Work</a>
-      <a href="#publications">Publications</a>
-      <a href="#about">About</a>
-    </nav>
+    <div class="header-row">
+      <div>
+        <h1>Karthick</h1>
+        <p>Senior Engineering Leader &amp; AI Solutions Architect — RAG, agent orchestration, cloud deployment</p>
+        <nav>
+          <a href="#work">Work</a>
+          <a href="#publications">Publications</a>
+          <a href="#about">About</a>
+        </nav>
+      </div>
+      <img class="profile-pic" src="profile.jpg" alt="Portrait of Karthick" width="128" height="128">
+    </div>
   </header>
 
   <section id="work">
@@ -185,8 +217,8 @@
       </div>
       <p class="item-desc">A multi-tool AI agent with RAG retrieval over a knowledge base, Claude tool-calling, and a bounded reasoning loop. Structured logging and automated tests included. Deployed on AWS.</p>
       <div class="item-links">
-        <a href="#" target="_blank">GitHub</a>
-        <a href="#" target="_blank">Live demo</a>
+        <!-- Swap for <a href="..." target="_blank" rel="noopener">GitHub</a> once public -->
+        <span class="link-soon">Code &amp; demo coming soon</span>
       </div>
     </div>
 
@@ -201,8 +233,8 @@
       </div>
       <p class="item-desc">A single-turn RAG assistant answering marketplace policy questions from developer docs, with Claude, GPT, and Gemini interchangeable via one config change. Deployed on AWS with JWT-based auth.</p>
       <div class="item-links">
-        <a href="#" target="_blank">GitHub</a>
-        <a href="#" target="_blank">Live demo</a>
+        <!-- Swap for <a href="..." target="_blank" rel="noopener">GitHub</a> once public -->
+        <span class="link-soon">Code &amp; demo coming soon</span>
       </div>
     </div>
     <!-- ============================================
@@ -221,11 +253,29 @@
          once finalized.
     ============================================= -->
     <div class="item">
+      <p class="item-title">AION Agent Harness: An Inference-Aware Self-Improving Agent Harness for Confidence-Gated Multi-Step Task Execution <span class="item-org">— IEEE, 2026</span></p>
+      <p class="item-desc">An agent harness that reads the model's per-step confidence — rerouting uncertain steps to a stronger model, passing uncertainty forward to later steps, and rewriting weak prompts between runs. Raised overall pipeline confidence from 0.78 to 0.89 without changing the model.</p>
+      <div class="item-links">
+        <a href="papers/AION_Agent_Harness.pdf" download>Download PDF</a>
+        <!-- Add once published: <a href="https://doi.org/..." target="_blank" rel="noopener">DOI</a> -->
+      </div>
+    </div>
+
+    <div class="item">
+      <p class="item-title">AION: Adaptive Inference Optimization Network for High-Throughput, Hallucination-Aware, and Feedback-Driven Large Language Model Serving <span class="item-org">— IEEE, 2026</span></p>
+      <p class="item-desc">A unified LLM serving framework that ties throughput, hallucination detection, and live LoRA adapter updates into one control loop — 40× throughput gain from batching, with confidence-based hallucination flagging at negligible overhead.</p>
+      <div class="item-links">
+        <a href="papers/AION_LLM_Inference.pdf" download>Download PDF</a>
+        <!-- Add once published: <a href="https://doi.org/..." target="_blank" rel="noopener">DOI</a> -->
+      </div>
+    </div>
+
+    <div class="item">
       <p class="item-title">AI-Driven Identity Verification: A Continuous Trust Architecture for Global Payment Platforms <span class="item-org">— IEEE, 2025</span></p>
       <p class="item-desc">Models identity as a continuous, probabilistic signal instead of a one-time onboarding check — reducing false positives while catching synthetic identity fraud and behavioral drift in real time.</p>
       <div class="item-links">
-        <a href="#" target="_blank">Paper (PDF)</a>
-        <a href="#" target="_blank">DOI</a>
+        <a href="papers/AI-Driven_Identity_Verification.pdf" download>Download PDF</a>
+        <!-- Add once published: <a href="https://doi.org/..." target="_blank" rel="noopener">DOI</a> -->
       </div>
     </div>
 
@@ -233,38 +283,39 @@
       <p class="item-title">AI-Driven Merchant Trust Infrastructure for Rapid Onboarding in Global Digital Marketplaces <span class="item-org">— IEEE, 2026</span></p>
       <p class="item-desc">Replaces static merchant onboarding checks with continuous, graph-based trust scoring — improving fraud detection and approval rates for legitimate merchants simultaneously.</p>
       <div class="item-links">
-        <a href="#" target="_blank">Paper (PDF)</a>
-        <a href="#" target="_blank">DOI</a>
+        <a href="papers/AI-Driven_Merchant_Trust_Infrastructure.pdf" download>Download PDF</a>
+        <!-- Add once published: <a href="https://doi.org/..." target="_blank" rel="noopener">DOI</a> -->
       </div>
     </div>
 
     <div class="item">
       <p class="item-title">AI-Driven Autonomous Infrastructure Optimization for Large-Scale Distributed Systems <span class="item-org">— IEEE, 2026</span></p>
-      <p class="item-desc">GA-AOCP: a graph-aware reinforcement learning control plane that unifies autoscaling, provisioning, and routing — cutting cost 19% and dropping SLO violations from 2.1% to 0.4%.</p>
+      <p class="item-desc">GA-AOCP: a graph-aware reinforcement learning control plane that unifies autoscaling, provisioning, and routing — cutting cost 19% and dropping SLO violations from 1.8% to 0.4%.</p>
       <div class="item-links">
-        <a href="#" target="_blank">Paper (PDF)</a>
-        <a href="#" target="_blank">DOI</a>
+        <a href="papers/AI-Driven_Autonomous_Infrastructure_Optimization.pdf" download>Download PDF</a>
+        <!-- Add once published: <a href="https://doi.org/..." target="_blank" rel="noopener">DOI</a> -->
       </div>
     </div>
 
-    <p class="item-pending">2 more papers in progress — check back soon.</p>
     <!-- ============================================
          END PUBLICATION BLOCK
     ============================================= -->
 
+    <!-- TALK TEMPLATE — uncomment and fill in when you have one
     <div class="item">
       <p class="item-title">[Presentation title] <span class="item-org">— [Conference / event name]</span></p>
       <p class="item-desc">[One-sentence summary of what the talk covered.]</p>
       <div class="item-links">
-        <a href="#" target="_blank">Slides</a>
+        <a href="#" target="_blank" rel="noopener">Slides</a>
       </div>
     </div>
+    -->
   </section>
 
   <section id="about">
     <h2>About</h2>
     <p class="about-text">
-      Senior engineering leader with 16 years in the industry — still hands-on, still learning.
+      Senior engineering leader with 20 years in the industry — still hands-on, still learning.
       At Intuit, I lead the 3P App Marketplace platform team, where I've built guardrails and
       prompt-injection defenses for a production agent, taken an AI review system from
       proof-of-concept to measured production impact, and built PII governance and compliance
@@ -276,8 +327,8 @@
     </p>
     <div class="contact-links">
       <a href="mailto:karthick.gunasekaran82@gmail.com">Email</a>
-      <a href="https://github.com/Karthickgreets99/" target="_blank">GitHub</a>
-      <a href="https://www.linkedin.com/in/karthickgchn/" target="_blank">LinkedIn</a>
+      <a href="https://github.com/Karthickgreets99" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/karthickgchn/" target="_blank" rel="noopener">LinkedIn</a>
     </div>
   </section>
 
